@@ -11,7 +11,7 @@ jobs:
     name: Build RHEL bootc image with repo access
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: rhel9-bootc-quick
+      IMAGE_NAME: rhel9-cicd-bootc
       REGISTRY: ghcr.io/nzwulfin
     container:
       image: registry.access.redhat.com/ubi9/ubi

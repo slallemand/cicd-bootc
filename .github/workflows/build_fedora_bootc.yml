@@ -11,7 +11,7 @@ jobs:
     name: Build Fedora bootc image
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: f40-bootc-quick
+      IMAGE_NAME: f40-cicd-bootc
       REGISTRY: ghcr.io/nzwulfin
    
     steps:
