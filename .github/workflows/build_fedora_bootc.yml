@@ -1,5 +1,6 @@
 name: Build F40 bootc image with GHA
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'fedora/**'
