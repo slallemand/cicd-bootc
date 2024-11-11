@@ -10,13 +10,13 @@ final step. You will only be using the subscription for the duration of the buil
 If you aren't familiar with actionvation keys, from the docs:
 > An activation key is a preshared authentication token that enables authorized users to register and auto-configure systems. Running a registration command with an activation key and organization  ID combination, instead of a username and password combination, increases security and facilitates automation.
 
-[Creating an activation key in the consolt](https://docs.redhat.com/en/documentation/subscription_central/1-latest/html/getting_started_with_activation_keys_on_the_hybrid_cloud_console/assembly-creating-managing-activation-keys#proc-creating-act-keys-console_)
+[Creating an activation key in the console](https://docs.redhat.com/en/documentation/subscription_central/1-latest/html/getting_started_with_activation_keys_on_the_hybrid_cloud_console/assembly-creating-managing-activation-keys#proc-creating-act-keys-console_)
 
 Create 2 secrets in the repo
 
-Organization ID as RHT_ORGID
+Organization ID as *RHT_ORGID*
 
-Activation key as RHT_ACT_KEY
+Activation key as *RHT_ACT_KEY*
 
 ## Getting access to the base image
 Ublike UBI, the bootc base image does require an account to access since this is a full RHEL host. To log into the registry during a pipeline build or other automation, you can [create a regitry service account}(https://access.redhat.com/RegistryAuthentication#registry-service-accounts-for-shared-environments-4) in tne customer portal.
@@ -24,9 +24,9 @@ Ublike UBI, the bootc base image does require an account to access since this is
 ### Token Information
 Create 1 var and 1 secret in the repo
 
-Token username as RHT_REG_SVCUSER (has a "|" character in the name)
+Token username as *RHT_REG_SVCUSER* (has a "|" character in the name)
 
-Password as RHT_REG_SVCPASS
+Password as *RHT_REG_SVCPASS*
 
 ### Crrent build status
 [![Fedora 40 bootc image workflow](https://github.com/nzwulfin/cicd-bootc/actions/workflows/build_fedora_bootc.yml/badge.svg)](https://github.com/nzwulfin/cicd-bootc/actions/workflows/build_fedora_bootc.yml)
