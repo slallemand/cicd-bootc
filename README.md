@@ -13,7 +13,9 @@ If you aren't familiar with actionvation keys, from the docs:
 [Creating an activation key in the consolt](https://docs.redhat.com/en/documentation/subscription_central/1-latest/html/getting_started_with_activation_keys_on_the_hybrid_cloud_console/assembly-creating-managing-activation-keys#proc-creating-act-keys-console_)
 
 Create 2 secrets in the repo
+
 Organization ID as RHT_ORGID
+
 Activation key as RHT_ACT_KEY
 
 ## Getting access to the base image
@@ -21,7 +23,9 @@ Ublike UBI, the bootc base image does require an account to access since this is
 
 ### Token Information
 Create 1 var and 1 secret in the repo
+
 Token username as RHT_REG_SVCUSER (has a "|" character in the name)
+
 Password as RHT_REG_SVCPASS
 
 ### Crrent build status
