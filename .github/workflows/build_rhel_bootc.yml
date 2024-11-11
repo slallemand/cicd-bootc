@@ -44,7 +44,7 @@ jobs:
         uses: redhat-actions/podman-login@v1
         with:
           registry: registry.redhat.io
-          username: ${{ vars.RHT_REG_SVCUSER }}
+          username: ${{ secrets.RHT_REG_SVCUSER }}
           password: ${{ secrets.RHT_REG_SVCPASS }}
           auth_file_path: /run/containers/0/auth.json
       
