@@ -6,4 +6,4 @@ RUN dnf -y install httpd cockpit && \
     mv /var/www /usr/share/www && \
     sed -ie 's,/var/www,/usr/share/www,' /etc/httpd/conf/httpd.conf
 RUN echo "Welcome to a GHA built bootc-http instance!" > /usr/share/www/html/index.html
-RUN systemctl enable cockpit
+RUN systemctl enable cockpit.socket
