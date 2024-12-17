@@ -29,11 +29,13 @@ Token username as *RHT_REG_SVCUSER* (has a "|" character in the name)
 Password as *RHT_REG_SVCPASS*
 
 ### Possible runner disk space issue
-These build are full operating systems so can be very big builds depending on the amount of software installed.  Valentin rerported this issue with a different bootc based GitHub Action build:
+GitHub runners come with roughly 14GB of free disk space. Since bootc images are complete operating systems, the job can take a lot of scrach space duing the build process. 
+
+@vrothberg rerported this issue with a different bootc based GitHub Action build:
 
 > the infamous "no space left on device" issue building my fedora-bootc-workstation image which brought me to https://github.com/orgs/community/discussions/25678. 
 
-Based on that discussion and some back and forth on an issue in this repo, we have a version of the fix that will work with this containerized approach here.  If your build starts failing due to space issues on the runner, you can mount `/opt` from the host read / write in the container and then remove the tool cache.
+Based on that discussion and some back and forth on issue #2 in this repo, we have a version of the fix that will work with the containerized approach here.  If your build starts failing due to space issues on the runner, you can mount `/opt` from the host read / write in the container and then remove the tool cache.
 
 Change the options in the container specification in the job:
 ```
@@ -47,7 +49,7 @@ Add the following step as the first step in the job (before the checkout):
           rm -rf /host/opt/hostedtoolcache
           df -Th
 ```
-You can remove the `df` if you don't want to log how much free space is available after remove the tool cache. On a test repo, this removed about 8GB of tools on the host that aren't used since this job runs completely containerized.
+On a test build, this removed about 8GB of tools on the host. Since this job runs in a nested UBI container which needs all of the tools made available in it, we aren't using any of the tools in the host cache. 
 
 ### Crrent build status
 [![Fedora 40 bootc image workflow](https://github.com/nzwulfin/cicd-bootc/actions/workflows/build_fedora_bootc.yml/badge.svg)](https://github.com/nzwulfin/cicd-bootc/actions/workflows/build_fedora_bootc.yml)
