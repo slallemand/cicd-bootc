@@ -1,4 +1,4 @@
-FROM registry.redhat.io/rhel9/rhel-bootc:9.5-1739420021
+FROM registry.redhat.io/rhel9/rhel-bootc:9.5-1739946498
 
 RUN echo "%wheel        ALL=(ALL)       NOPASSWD: ALL" > /etc/sudoers.d/wheel-sudo
 RUN dnf -y install httpd cockpit && \
