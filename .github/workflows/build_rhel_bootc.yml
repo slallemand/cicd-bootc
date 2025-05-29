@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: rhel9-cicd-bootc
-      REGISTRY: ghcr.io/nzwulfin
+      REGISTRY: ghcr.io/slallemand
     container:
       image: registry.access.redhat.com/ubi9/ubi
       options: --privileged
