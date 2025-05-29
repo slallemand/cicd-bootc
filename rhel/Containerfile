@@ -1,9 +1,4 @@
-FROM registry.redhat.io/rhel9/rhel-bootc:9.5-1746008337
-
+FROM registry.redhat.io/rhel10/rhel-bootc:10.0-1747353195
 RUN echo "%wheel        ALL=(ALL)       NOPASSWD: ALL" > /etc/sudoers.d/wheel-sudo
-RUN dnf -y install httpd cockpit && \
-    systemctl enable httpd && \
-    mv /var/www /usr/share/www && \
-    sed -ie 's,/var/www,/usr/share/www,' /etc/httpd/conf/httpd.conf
-RUN echo "Welcome to a GHA built bootc-http instance!" > /usr/share/www/html/index.html
+RUN dnf -y install cockpit
 RUN systemctl enable cockpit.socket
