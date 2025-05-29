@@ -15,7 +15,7 @@ jobs:
       IMAGE_NAME: rhel10-cicd-bootc
       REGISTRY: ghcr.io/slallemand
     container:
-      image: registry.access.redhat.com/ubi10/ubi
+      image: registry.access.redhat.com/ubi9/ubi
       options: --privileged
 
     steps:
