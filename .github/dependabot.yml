@@ -4,6 +4,15 @@
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 
 version: 2
+
+registries:
+  dockerhub:
+    type: docker-registry
+    url: https://registry.redhat.io
+    username: ${{secrets.RHT_REG_SVCUSER}}
+    password: ${{secrets.RHT_REG_SVCPASS}}
+
+
 updates:
   - package-ecosystem: "docker" # See documentation for possible values
     directory: "/rhel" # Location of package manifests
