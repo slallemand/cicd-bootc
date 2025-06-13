@@ -6,7 +6,7 @@
 version: 2
 
 registries:
-  dockerhub:
+  redhat:
     type: docker-registry
     url: https://registry.redhat.io
     username: ${{secrets.RHT_REG_SVCUSER}}
@@ -16,5 +16,6 @@ registries:
 updates:
   - package-ecosystem: "docker" # See documentation for possible values
     directory: "/rhel" # Location of package manifests
+    registries: redhat
     schedule:
       interval: "daily"
