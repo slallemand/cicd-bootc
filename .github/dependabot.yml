@@ -16,6 +16,6 @@ registries:
 updates:
   - package-ecosystem: "docker" # See documentation for possible values
     directory: "/rhel" # Location of package manifests
-    registries: "redhat"
+    registries: "*"
     schedule:
       interval: "daily"
