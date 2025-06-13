@@ -8,7 +8,7 @@ version: 2
 registries:
   redhat:
     type: docker-registry
-    url: https://registry.redhat.io
+    url: registry.redhat.io
     username: ${{secrets.RHT_REG_SVCUSER}}
     password: ${{secrets.RHT_REG_SVCPASS}}
 
