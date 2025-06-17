@@ -1,4 +1,4 @@
-FROM registry.redhat.io/rhel10/rhel-bootc@sha256:8578bc7564e089f3a06962f158b1e978a2891b65c081c6f8684ef64f08e27556
+FROM registry.redhat.io/rhel10/rhel-bootc:10.0-1750093701@sha256:8578bc7564e089f3a06962f158b1e978a2891b65c081c6f8684ef64f08e27556
 
 RUN echo "%wheel        ALL=(ALL)       NOPASSWD: ALL" > /etc/sudoers.d/wheel-sudo
 
